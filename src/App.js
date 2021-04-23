@@ -3,16 +3,22 @@ import React from 'react';
 function App() {
   return <div>
     <Folder name="Desktop">
-      Some stuff
+      <File name ="Dogs.jpg"/>
+      <File name ="cats.png"/>
     </Folder>
     <Folder name="Applications"/>
-    <File name ="Dogs.jpg"/>
   </div>
 }
 
 const Folder = (props) => {
-  console.log(props)
-  return <h3>{props.name}</h3>
+
+
+  return <div>
+    {props.name}
+    <div style={{marginLeft: '17px'}}>
+      {props.children}
+    </div>
+  </div>
 };
 
 const File = (props) => {
